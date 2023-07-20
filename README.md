@@ -20,7 +20,7 @@ Super minimalistic interface for distraction-free dreaming..
 - **Speech to Prompt to Image**: App converts speech to text prompt, then generates an image.
 - **Punctuation Handling**: Any time you say "dream of" a comma will insert into the prompt- giving prompter more control of composition.
 - **Select SD Model**: You can choose the SD model to use for image generation from a list of (your) available models.
-- **On-screen Prompt**: Transcription**: App transcribes the speech input and displays it on-screen for easy reference.
+- **On-screen Prompt Transcription**: App transcribes the speech input and displays it on-screen for easy reference.
 
 ## Requirements
 
