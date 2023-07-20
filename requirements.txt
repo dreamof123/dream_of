@@ -1,0 +1,9 @@
+requests
+SpeechRecognition
+json
+Pillow
+tkinter
+pynput
+random
+threading
+webuiapi
