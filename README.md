@@ -6,9 +6,9 @@
 
 ## Overview
 
-Dream-of is a script that converts speech input into image prompts using AI-powered text-to-image generation. It allows you to generate creative and visually appealing images based on the prompts you provide through speech. This project aims to make the process of generating image prompts easy and interactive.
+Dream-of allows you to generate creative and visually appealing images from latent space, based on the prompts you provide through speech.
 
-## A Cool Use Case Example
+## Example of Use Case
 
 Deploy on an art-frame-like monitor with an input device (keyboard, flic button, etc.) that triggers "listening".
 
