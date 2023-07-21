@@ -34,7 +34,8 @@ Deploy on an art-frame-like monitor with an input device (keyboard, flic button,
 
 1. Run the `dream_of.py` script on client.
 2. Enter the Auto1111 host IP, host port, SD model from the provided list.
-   - Note: This step will create a config file. If you need to reconfigure, delete the config file and rerun `dream_of.py`.
+   - This step will create a config file in your run directory.
+   - If you need to reconfigure, delete the config file and rerun `dream_of.py`.
 3. Press the spacebar to start providing speech input for the prompt.
 * The generated image will be displayed on-screen for 30 seconds before unloading [unload faster with spacebar].
 * Loop to step 3
