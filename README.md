@@ -32,7 +32,7 @@ Speech provided by the user magically generates an image from latent space. A tr
 * Client = end user device [e.g., Windows-powered "art-frame"] running dream_of.py
 * Server = server location hosting Auto1111
 
-NOTE: dream_of.py can be refactored to support any OS
+NOTE: 'dream_of.py' can be refactored to support any OS
 
 ## How to Use
 
