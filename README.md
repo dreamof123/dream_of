@@ -24,15 +24,15 @@ Speech provided by the user magically generates an image from latent space. A tr
 
 ## Requirements
 
-1. [Client] **Windows OS**: The script is designed to run on the Windows operating system.
-2. [Server] **Auto1111**: Auto1111 running on a server [https://github.com/AUTOMATIC1111/stable-diffusion-webui]
-3. [Client] **SDWebUIAPI**: [https://github.com/mix1009/sdwebuiapi]
-4. [Client] **Python Dependencies**: Please see the `requirements.txt` file for the required Python packages and versions.
+1. [Client] **Windows OS**
+2. [Client] **Python Dependencies**: Please see the `requirements.txt` file for the required Python packages / versions
+3. [Client] **SDWebUIAPI**: Auto1111 API wrapper [https://github.com/mix1009/sdwebuiapi]
+4. [Server] **Auto1111**: Modulates Stable Diffusion models [https://github.com/AUTOMATIC1111/stable-diffusion-webui]
 
 * Client = end user device [e.g., Windows-powered "art-frame"] running dream_of.py
 * Server = server location hosting Auto1111
 
-NOTE: the code should be easy to refactor to support your OS of choice.
+NOTE: dream_of.py can be refactored to support any OS
 
 ## How to Use
 
