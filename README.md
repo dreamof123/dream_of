@@ -27,8 +27,8 @@ Deploy on an art-frame-like monitor with an input device (keyboard, flic button,
 3. [Client] **SDWebUIAPI**: [https://github.com/mix1009/sdwebuiapi]
 4. [Client] **Python Dependencies**: Please see the `requirements.txt` file for the required Python packages and versions.
 
-*Client = end user device [e.g., Windows-powered "art-frame"] running dream_of.py
-*Server = server location hosting Auto1111
+* Client = end user device [e.g., Windows-powered "art-frame"] running dream_of.py
+* Server = server location hosting Auto1111
 
 ## How to Use
 
