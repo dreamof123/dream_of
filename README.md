@@ -45,6 +45,14 @@ Deploy on an art-frame-like monitor with an input device (keyboard, flic button,
 - **Spacebar**: Start listen for speech.
 - **Escape Key**: Close the app.
 
+## Version History
+
+[07.21.23]
+- Refactor to force GUI to wait on user inputs via termninal (when config does not exist)
+  
+[07.20.23]
+- Launch v1
+
 ## Contributing
 
 Contributions to Dream-of are welcome! If you have any ideas, suggestions, or improvements, feel free to open an issue or submit a pull request.
