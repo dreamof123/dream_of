@@ -8,11 +8,9 @@
 
 Dream-of is a script that converts speech input into image prompts using AI-powered text-to-image generation. It allows you to generate creative and visually appealing images based on the prompts you provide through speech. This project aims to make the process of generating image prompts easy and interactive.
 
-A cool use case-
+## A Cool Use Case Example
 
-Deploy on an art-frame-like monitor with an input device that triggers "listening" (keyboard, flic button, etc.).
-
-Super minimalistic interface for distraction-free dreaming..
+Deploy on an art-frame-like monitor with an input device (keyboard, flic button, etc.) that triggers "listening".
 
 ## Features
 
@@ -24,24 +22,27 @@ Super minimalistic interface for distraction-free dreaming..
 
 ## Requirements
 
-1. **Windows OS**: The script is designed to run on the Windows operating system.
-2. **Auto1111**: [https://github.com/AUTOMATIC1111/stable-diffusion-webui]
-3. **SDWebUIAPI**: [https://github.com/mix1009/sdwebuiapi]
-4. **Python Dependencies**: Please see the `requirements.txt` file for the required Python packages and versions.
+1. [Client] **Windows OS**: The script is designed to run on the Windows operating system.
+2. [Server] **Auto1111**: Auto1111 running on a server [https://github.com/AUTOMATIC1111/stable-diffusion-webui]
+3. [Client] **SDWebUIAPI**: [https://github.com/mix1009/sdwebuiapi]
+4. [Client] **Python Dependencies**: Please see the `requirements.txt` file for the required Python packages and versions.
+
+*Client = end user device [e.g., Windows-powered "art-frame"] running dream_of.py
+*Server = server location hosting Auto1111
 
 ## How to Use
 
-1. Run the `dream_of.py` script (binary version coming soon).
+1. Run the `dream_of.py` script on client.
 2. Enter the Auto1111 host IP, host port, SD model from the provided list.
    - Note: This step will create a config file. If you need to reconfigure, delete the config file and rerun `dream_of.py`.
 3. Press the spacebar to start providing speech input for the prompt.
-4. The generated image will be displayed on-screen for 30 seconds before unloading [unload faster with spacebar].
-5. Loop to step 3
+* The generated image will be displayed on-screen for 30 seconds before unloading [unload faster with spacebar].
+4. Loop to step 3
 
 ## Keyboard Controls
 
-- **Spacebar**: Start speech input [listening] and generate the corresponding image prompt.
-- **Escape Key**: Close the application.
+- **Spacebar**: Start listen for speech.
+- **Escape Key**: Close the app.
 
 ## Contributing
 
