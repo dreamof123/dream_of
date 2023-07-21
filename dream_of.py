@@ -196,12 +196,13 @@ def generate_image_from_text(text, transcribed_label, transcribed_text):
         width=512,
         height=512,
         steps=30,
+        styles=["GENERIC POSITIVE NEGATIVE"],
         cfg_scale=7,
         sampler_name="Euler a",
         denoising_strength=0.50,
         prompt=modified_text,  # Use the modified text
         enable_hr=True,
-        hr_upscaler="ESRGAN_4x",
+        hr_upscaler="4x-UltraSharp",
         hr_second_pass_steps=35,
         hr_resize_x=screen_height,
         hr_resize_y=screen_height,
@@ -274,22 +275,17 @@ def display_image(image_path, transcribed_label):
     # Delete the image file
     #os.remove(image_path)
 
-# GUI initialization
-root = tk.Tk()
-root.title("Image Dreamer")
-root.configure(bg="black")
-root.attributes('-fullscreen', True)
+def initialize_gui():
+    global root, bg_color
+    root = tk.Tk()
+    root.title("Image Dreamer")
+    root.configure(bg="black")
+    root.attributes('-fullscreen', True)
+    
+    bg_color = root.winfo_rgb('black')
 
-space_pressed = False
-escape_pressed = False
-
-# Event bindings
-keyboard_listener = keyboard.Listener(on_press=space_key_pressed)
-keyboard_listener.start()
-keyboard_listener = keyboard.Listener(on_press=escape_key_pressed)
-keyboard_listener.start()
-
-root.bind("<Escape>", escape_key_pressed)
+    # Event bindings
+    root.bind("<Escape>", escape_key_pressed)
 
 # === GUI Functions ===
 
@@ -336,34 +332,35 @@ def fade_out(label, base_text, color, steps=10):
         root.update()
         time.sleep(0.1)
 
-bg_color = root.winfo_rgb('black')
-
 # === Main Program ===
+keyboard_listener = keyboard.Listener(on_press=space_key_pressed, on_release=escape_key_pressed)
+keyboard_listener.start()
 
 def main():
     try:
+        # Load configuration
         config = load_config()
-        if not config['host'] or not config['port'] or not config['model']:
+        if not config.get('host') or not config.get('port') or not config.get('model'):
             host, port = prompt_user_for_host_and_port()
-            models = get_available_models(config['host'], config['port'])
+            models = get_available_models(host, port)
             if models:
                 model = select_model(models)
                 save_config(host, port, model)
+                config = {'host': host, 'port': port, 'model': model}
             else:
                 print("No models available.")
-            config['host'], config['port'], config['model'] = host, port, model
-            api = WebUIApi(host=config['host'], port=config['port'])
-            options = {'sd_model_checkpoint': config['model']}
-            api.set_options(options)
-        else:
-            api = WebUIApi(host=config['host'], port=config['port'])
-            options = {'sd_model_checkpoint': config['model']}
-            api.set_options(options)
+                return
 
         api = WebUIApi(host=config['host'], port=config['port'])
+        options = {'sd_model_checkpoint': config['model']}
+        api.set_options(options)
+
+        # Initialize the GUI after loading the config
+        initialize_gui()
+
         global space_pressed
         global escape_pressed
-        global stop_program  # Add this line
+        global stop_program
         transcribed_text = []
 
         # Start the server in a new thread
@@ -382,12 +379,12 @@ def main():
         transcribed_label.place(x=10, y=10)  # Position the label in the top left corner
 
         while True:
-            if stop_program:  # Add this line
+            if stop_program:
                 break
             space_pressed = False
             escape_pressed = False
 
-            label_text = "\n\n\n\n\n\nPress spacebar or touch\n\n\n\n\n\n"  # add more newlines before and after the text
+            label_text = "\n\n\n\n\n\nPress spacebar or touch\n\n\n\n\n\n"
             label = tk.Label(root, text=label_text, font=("Arial", 20), fg='black', bg='black')
             label.place(relx=0.5, rely=0.5, anchor='center')
 
@@ -411,7 +408,7 @@ def main():
             fade_out(label, label_text, 'dark red')
 
             # Replace the label with "Listening..." label
-            base_text = "\n\n\n\n\n\nListening...\n\n\n\n\n\n"  # add more newlines before and after the text
+            base_text = "\n\n\n\n\n\nListening...\n\n\n\n\n\n"
             label.config(text=zalgo_text(base_text), fg='black')
             root.update()
 
@@ -433,12 +430,12 @@ def main():
 
             # Check if speech has been transcribed and update the GUI accordingly
             def check_transcribed_text():
-                if transcribed_text:  # If text has been transcribed
-                    transcribed_label.config(text=transcribed_text[-1])  # Update the label with the last transcribed text
+                if transcribed_text:
+                    transcribed_label.config(text=transcribed_text[-1])
                 else:
-                    transcribed_label.config(text="")  # Clear the label text
-                if listening_thread.is_alive():  # If the listening thread is still running
-                    root.after(100, check_transcribed_text)  # Check again after 100 ms
+                    transcribed_label.config(text="")
+                if listening_thread.is_alive():
+                    root.after(100, check_transcribed_text)
 
             # Start checking if speech has been transcribed
             check_transcribed_text()
@@ -462,7 +459,7 @@ def main():
             transcribed_text.clear()
 
             # Recreate the 'Press spacebar or touch' label after the image is unloaded
-            label_text = "\n\n\n\n\n\nPress spacebar or touch\n\n\n\n\n\n"  # add more newlines before and after the text
+            label_text = "\n\n\n\n\n\nPress spacebar or touch\n\n\n\n\n\n"
             label = tk.Label(root, text=label_text, font=("Arial", 20), fg='black', bg='black')
             label.place(relx=0.5, rely=0.5, anchor='center')
 
@@ -474,6 +471,9 @@ def main():
         # Close the root window
         root.destroy()
 
+
 # Start the main program
 if __name__ == '__main__':
+
+    
     main()
