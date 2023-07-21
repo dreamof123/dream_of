@@ -6,11 +6,13 @@
 
 ## Overview
 
-Dream-of allows you to generate creative and visually appealing images from latent space, based on the prompts you provide through speech.
+Dream-of allows you to generate creative and visually appealing images from latent space, based on the prompts provided by speech.
 
 ## Example of Use Case
 
-Deploy on an art-frame-like monitor with an input device (keyboard, flic button, etc.) that triggers "listening".
+Deploy on an art-frame-like monitor [powered by any device capable of running Windows OS] with an input device [keyboard, flic button, etc.] that triggers "listening" with the "press of a button".
+
+Speech provided by the user magically generates an image from latent space. A truly new image, from the user's imagination, that does not exist anywhere else in history.
 
 ## Features
 
@@ -29,6 +31,8 @@ Deploy on an art-frame-like monitor with an input device (keyboard, flic button,
 
 * Client = end user device [e.g., Windows-powered "art-frame"] running dream_of.py
 * Server = server location hosting Auto1111
+
+NOTE: the code should be easy to refactor to support your OS of choice.
 
 ## How to Use
 
