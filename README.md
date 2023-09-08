@@ -14,14 +14,6 @@ Deploy on an art-frame-like monitor [powered by any device capable of running Wi
 
 Speech provided by the user magically generates an image from latent space. A truly new image, from the user's imagination, that does not exist anywhere else in history.
 
-<iframe width="315" height="560"
-src="https://www.youtube.com/embed/sHMLz7atako?si=pFiIOTMgyCl_WTW0"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-gyroscope; picture-in-picture;
-web-share"
-allowfullscreen></iframe>
-
 ## Features
 
 - **Minimalistic Interface**: App operates in a minimalistic full-screen black window.
@@ -72,3 +64,7 @@ Contributions to Dream-of are welcome! If you have any ideas, suggestions, or im
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE] file for more information.
+
+## Example
+
+https://github.com/neurovitro/dream_of/assets/35537601/eb3186ab-846b-49e9-a29b-143258a561f3
