@@ -16,18 +16,6 @@ Speech provided by the user magically generates an image from latent space. A tr
 
 [![](https://youtube.com/shorts/sHMLz7atako?si=rB6_Li8eKEtl6B_h)](https://youtu.be/sHMLz7atako?si=rB6_Li8eKEtl6B_h)
 
-
-<center>
- <iframe width="560" 
-         height="315" 
-         src="https://youtube.com/shorts/sHMLz7atako?si=rB6_Li8eKEtl6B_h" 
-         title="YouTube video player" 
-         frameborder="0" 
-         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-         allowfullscreen>
- </iframe>
-</center>
-
 ## Features
 
 - **Minimalistic Interface**: App operates in a minimalistic full-screen black window.
