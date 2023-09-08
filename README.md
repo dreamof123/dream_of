@@ -14,6 +14,9 @@ Deploy on an art-frame-like monitor [powered by any device capable of running Wi
 
 Speech provided by the user magically generates an image from latent space. A truly new image, from the user's imagination, that does not exist anywhere else in history.
 
+[![](https://youtube.com/shorts/sHMLz7atako?si=rB6_Li8eKEtl6B_h)](https://youtu.be/sHMLz7atako?si=rB6_Li8eKEtl6B_h)
+
+
 <center>
  <iframe width="560" 
          height="315" 
