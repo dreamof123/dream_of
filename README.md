@@ -64,7 +64,3 @@ Contributions to Dream-of are welcome! If you have any ideas, suggestions, or im
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE] file for more information.
-
-## Example
-
-https://github.com/neurovitro/dream_of/assets/35537601/eb3186ab-846b-49e9-a29b-143258a561f3
